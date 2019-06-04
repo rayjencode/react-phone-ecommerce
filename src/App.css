@@ -1,33 +1,194 @@
-.App {
-  text-align: center;
+:root {
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhite: #fff;
+  --mainDark: #23252a;
+  --mainYellow: #ffa400;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Oswald", sans-serif !important;
+  background: rgb(240, 240, 240) !important;
+  color: var(--mainDark) !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.text-title {
+  font-family: "Concert One", cursive;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-blue {
+  color: var(--mainBlue);
+}
+
+.text-bright {
+  color: var(--lightBlue);
+}
+
+.bg-mainBlue {
+  background: var(--mainBlue);
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 1.2rem;
+}
+
+.btn-main {
+  background-color: white;
+  color: var(--mainBlue);
+  border: solid 1px transparent;
+  border-radius: 50px;
+  padding: 5px;
+  transition: all 0.5s ease-out;
+}
+.btn-main:focus {
+  outline: none;
+}
+.btn-main:hover {
+  background-color: var(--mainBlue);
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+.btn-main-secondary {
+  background-color: var(--mainBlue);
+  color: white;
+  border: solid 1px transparent;
+  border-radius: 50px;
+  padding: 5px;
+  transition: all 0.5s ease-out;
+}
+.btn-main-secondary:focus {
+  outline: none;
+}
+.btn-main-secondary:hover {
+  background-color: white;
+  color: var(--mainBlue);
+  border: 1px solid var(--mainBlue);
+  padding: 5px;
+}
+
+.btn-main-success {
+  background-color: var(--mainYellow);
+  color: white;
+  border: solid 1px transparent;
+  border-radius: 50px;
+  padding: 5px;
+  transition: all 0.5s ease-out;
+}
+.btn-main-success:focus {
+  outline: none;
+}
+.btn-main-success:hover {
+  background-color: white;
+  color: var(--mainYellow);
+  border: 1px solid var(--mainYellow);
+  padding: 5px;
+}
+.product .product__card {
+  border: 0.04rem solid rgba(0, 0, 0, 0.02);
+  transition: all 0.5s ease;
+}
+
+.product .product__card--footer {
+  background: transparent;
+  border-top: transparent;
+  transition: all 1s linear;
+}
+
+.product .product__card:hover {
+  border: 0.04rem solid rgba(0, 0, 0, 0.02);
+  box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.2);
+}
+
+.product .product__card--footer:hover {
+  background: rgba(247, 247, 247);
+}
+
+.product .product__img--container {
+  position: relative;
+  overflow: hidden;
+  transition: all 3s ease;
+}
+
+.product .product__card--img {
+  transition: all 1s linear;
+}
+.product .product__img--container:hover .product__card--img {
+  transform: scale(1.2);
+}
+.product .product__cart--btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem;
+  background: var(--lightBlue);
+  color: white;
+  border: none;
+  border-radius: 0.5rem 0 0 0;
+  transform: translate(100%, 100%);
+  transition: all 0.5s linear;
+}
+.product .product__card:hover .product__cart--btn {
+  transform: translate(0, 0);
+}
+
+.product .product__cart--icon {
+  font-size: 1.6rem;
+}
+
+.product .product__cart--btn:hover {
+  color: var(--mainBlue);
+  cursor: pointer;
+}
+.product .product__cart--btn:focus {
+  outline: none;
+}
+
+.modal-cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#modal {
+  background: white;
+  border-radius: 10px;
+}
+
+.cart-card {
+  border: 1px solid rgb(235, 235, 235);
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.cart-card--icon {
+  font-size: 0.5rem;
+  cursor: pointer;
+  border: 1px solid rgb(223, 223, 223);
+  padding: 0.4rem;
+  transition: all 1s;
+}
+.cart-card--icon:hover {
+  background-color: var(--mainBlue);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.cart-card--increment {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-card--icon-delete {
+  cursor: pointer;
+  color: var(--mainYellow);
 }
